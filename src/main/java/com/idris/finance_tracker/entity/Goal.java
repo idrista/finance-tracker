@@ -1,9 +1,11 @@
 package com.idris.finance_tracker.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDate;
 
+@Data
 @Entity
 public class Goal {
     @Id

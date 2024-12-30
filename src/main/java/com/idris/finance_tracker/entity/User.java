@@ -1,7 +1,9 @@
 package com.idris.finance_tracker.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
 public class User {
 
