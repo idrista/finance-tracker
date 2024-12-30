@@ -9,13 +9,16 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 public class LoanTransaction {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @EmbeddedId
+    private LoanTransactionId id;
 
     @ManyToOne
-    @JoinColumn(name = "loan_id", nullable = false)
+    @MapsId("loanId")
     private Loan loan;
+
+    @ManyToOne
+    @MapsId("transactionId")
+    private Transaction transaction;
 
     @Column(nullable = false)
     private Long amount;
@@ -25,3 +28,4 @@ public class LoanTransaction {
     @CreationTimestamp
     private LocalDateTime date;
 }
+

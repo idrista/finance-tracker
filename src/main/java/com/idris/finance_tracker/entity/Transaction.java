@@ -26,4 +26,8 @@ public class Transaction {
 
     @CreationTimestamp
     private LocalDateTime date;
+
+    @ManyToOne
+    @JoinColumn(name = "loan_id")
+    private Loan loan;
 }
